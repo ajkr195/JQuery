@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+
+<button id="btn1">Button</button>
+<button id="btn2">Submit</button>
+
+<p id="para1">This is a paragraph.This is a paragraph.This is a paragraph.This is a paragraph.<span>This is a paragraph.This is a paragraph.</span></p>
+<p id="para2">This is another paragraph.This is another paragraph.This is another paragraph.This is another paragraph.This is another paragraph.</p>
+
+<ul id="list">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+  <li>Coffee</li>
+
+</ul>
+
+
+<a href="www.google.com">Google</a>
+<a href="www.google.com">Yahoo</a>
+
+
+
+<h2>HTML Table</h2>
+<button id="hidetable">Hide Table</button>
+<button id="showtable">Show Table</button>
+<table id="table1">
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+
+
+</table>
+
+<h4>Mouse Events</h4>
+<h4 id="coords"></h4>
+
+<button id="btn3">Button3</button>
+<button id="btn4">Button4</button>
+
+
+
+<p id="para3">jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.[2] It is free, open-source software using the permissive MIT License.[3] As of May 2019, jQuery is used by 73% of the 10 million most popular websites.[4] Web analysis indicates that it is the most widely deployed JavaScript library by a large margin, having 3 to 4 times more usage than any other JavaScript library</p>
+
+
+<form id="myform">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value=""><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value=""><br><br>
+
+  <select id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+  <input type="submit" value="Submit">
+</form>
+
+<br><br><br><br>
+<input type="text" id="addtolist">
+<ul id="mylist">
+  <li>item 1</li>
+  <li>item 2</li>
+   <li>item 3</li>
+    <li>item 4</li>
+     <li>item 5</li>
+      <li>item 6</li>
+</ul>
+
+<br><br><br><br>
+
+
+<button id="btn5">ClickHere5</button>
+<button id="btn6">ClickHere6</button>
+<button id="btn7">ClickHere7</button>
+<button id="btn8">ClickHere8</button>
+<button id="btn9">ClickHere9</button>
+<button id="btn10">ClickHere10</button>
+<button id="btn11">ClickHere11</button>
+<button id="btn12">ClickHere12</button>
+<button id="btn13">ClickHere13</button>
+<button id="btn14">ClickHere14</button>
+<button id="btn15">ClickHere15</button>
+<button id="btn16">ClickHere16</button>
+<button id="btn17">ClickHere17</button>
+<button id="btn18">ClickHere18</button>
+<button id="btn19">ClickHere19</button>
+
+<p id="mypara"> As of May 2019, jQuery is used by 73% of the 10 million most popular websites.[4] Web analysis indicates that it is the most widely deployed JavaScript library by a large margin, having 3 to 4 times more usage than any other JavaScript library </p>
+
+
+
+
+
+<br><br>
+
+
+
+<p>The queue() method shows the queue of functions to be executed on the selected elements.</p>
+<p>The dequeue() method removes the next function from the queue, and then executes the function.</p>
+<p>The clearQueue() removes all items from the queue that have not yet been run.<p>
+
+<p>
+<button id="start">Start Animation</button>
+<button id="stop">Stop Animation</button>
+</p>
+
+<div style="background:#98bf21;height:100px;width:100px;position:relative"></div>
+
+<br><br><br><br>
+
+<input type="text" id="inputid1">Input</input>
+<p> =7 Green. > 7 Orange. < 7 Red. Border </p>
+
+<br><br><br><br>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+$("#btn1").click(function(){
+ // alert("The paragraph was clicked.");
+  $('#para1').hide();
+  $('#para2').show();
+});
+
+
+$("#btn2").click(function(){
+ // alert("The paragraph was clicked.");
+ $('#para1').show();
+ $('#para2').hide();
+});
+
+$("#hidetable").click(function () {
+$("#table1").hide(300);
+});
+$("#showtable").click(function () {
+$("#table1").show(500);
+});
+
+$('p span').css('color','red');
+
+$('ul#list li:first').css('color','red');
+$('ul#list li:last').css('color','green');
+
+$('ul#list li:even').css('background-color','yellow');
+$('ul#list li:odd').css('background-color','pink');
+
+$('ul#list li:nth-child(3n)').css('list-style','none');
+
+$('ul').before('<h4>Hello</h4>');
+$('ul').after('<h4>World</h4>');
+
+
+//$(':button').hide();
+
+//$('[href]').css('color','red');
+$('a[href="www.google.com"]').css('color','red');
+$('a').attr('target','_blank');
+
+
+$("#btn3").click(function () {
+$("#para3").toggle();
+});
+
+
+$(document).on('mousemove',function(e){
+    $('#coords').html('Coords: Y: '+e.clientY+
+    "X: "+e.clientX);
+    });
+
+
+$('input').focus(function(){
+    $(this).css('background','#D5F5E3');
+});
+
+$('input').blur(function(){
+    $(this).css('background','white');
+});
+
+$('input').keyup(function(e){
+    console.log(e.target.value);
+});
+
+$('select#cars').change(function(e){
+   alert(e.target.value);
+});
+
+$('#myform').submit(function(e){
+    e.preventDefault();
+    var firstname = $('input#fname').val();
+     var lastname = $('input#lname').val();
+      var car = $('select#cars').val();
+      alert('You provided these details:  - ' +firstname +lastname + car);
+
+});
+
+
+
+
+$('#addtolist').keyup(function(e){
+    var code = e.which;
+    if(code == 13) {
+        e.preventDefault();
+        $('ul#mylist').append('<li>'+ e.target.value + '</li>');
+    }
+});
+
+var newArr = $('ul#addtolist li').toArray();
+$.each(newArr, function(i, val) {
+      console.log(val.innerHTML);
+
+})
+
+$("#btn5").click(function(){
+  $("#mypara").fadeToggle();
+});
+
+$("#btn5").click(function(){
+    $("#mypara").fadeToggle("slow", function(){
+      alert("fadeToggle effect is complete");
+    });
+  });
+
+$("#btn6").click(function(){
+  $("#mypara").fadeOut(3000);
+});
+
+
+$("#btn7").click(function(){
+ $("#mypara").fadeTo(2000, 0.4);
+});
+
+$("#btn8").click(function(){
+  $("#mypara").finish();
+});
+
+$("#btn9").click(function(){
+  $("#mypara").stop();
+});
+
+
+$("#btn10").click(function(){
+  $("#mypara").slideUp(500);
+});
+
+$("#btn11").click(function(){
+  $("#mypara").slideDown(500);
+});
+
+$("#btn12").click(function(){
+  $("#mypara").slideToggle(500);
+});
+
+
+  var div = $("div");
+  $("#start").click(function(){
+    div.animate({height: 300}, "slow");
+    div.animate({width: 300}, "slow");
+    div.queue(function () {
+      div.css("background-color", "red");  
+      div.dequeue();
+    });
+    div.animate({height: 100}, "slow");
+    div.animate({width: 100}, "slow");
+  });
+  $("#stop").click(function(){
+    div.clearQueue();
+  });
+
+
+
+$("#inputid1").change(function () {
+    var value = parseFloat(this.value);
+    // If the value is less than 7, add a red border
+    if (value < 7) {
+        $(this).css("border", "2px solid red");
+    }
+
+    // Else if the value is equal to 7, add a green border
+    else if (value === 7) {
+        $(this).css("border", "2px solid green");
+    }
+
+    // Else if the value is greater than 7, add an orange border
+    else if (value > 7) {
+        $(this).css("border", "2px solid orange");
+    }
+
+    // Else if the value is anything else, add a black border
+    else {
+        $(this).css("border", "2px solid black");
+    }
+}).trigger("change");
+
+
+
+
+
+});
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
