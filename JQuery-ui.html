@@ -25,6 +25,17 @@
 	}); 
 </script>
 <script>
+$(document).ready(function() {
+$( '#accordion3' ).accordion({
+animate: 1000,
+beforeActivate: function( event, ui ) {
+$('#d1').html("newHeader : " + ui.newHeader.text() + " <br> newPanel : " + ui.newPanel.text() )
+$('#d1').append(" <br><br> oldHeader : " + ui.oldHeader.text() + "<br> oldPanel : " + ui.oldPanel.text());
+ }
+});
+})
+</script>
+<script>
 	$(function() {
 		var availableTags = [ "ActionScript", "AppleScript", "Asp", "BASIC",
 				"C", "C++", "Clojure", "COBOL", "ColdFusion", "Erlang",
@@ -702,25 +713,25 @@ label {
 }
 </style>
 <style>
-    .box{
-        float:left;
-        overflow: hidden;
-        background: blue;
-    }
-    /* Add padding and border to inner content
+.box {
+	float: left;
+	overflow: hidden;
+	background: blue;
+}
+/* Add padding and border to inner content
     for better animation effect */
-    .box-inner{
-        width: 200px;
-        padding: 10px;
-        border: 1px solid red;
-    }
+.box-inner {
+	width: 200px;
+	padding: 10px;
+	border: 1px solid red;
+}
 </style>
 <script>
   $( function() {
     $( "input" ).checkboxradio();
   } );
   </script>
- <script>
+<script>
     $(document).ready(function(){
         $(".slide-toggle").click(function(){
             $(".box").animate({
@@ -732,13 +743,15 @@ label {
 </head>
 
 <body>
-
-<button type="button" class="slide-toggle">Slide Toggle</button>
-    <hr>
-    <div class="box">
-        <div class="box-inner">Lorem ipsum dolor sit amet...</div>
-    </div>
-<br><br>
+	<br>
+	<br>
+	<button type="button" class="slide-toggle">Slide Toggle</button>
+	<hr>
+	<div class="box">
+		<div class="box-inner">Lorem ipsum dolor sit amet...</div>
+	</div>
+	<br>
+	<br>
 	<div class="widget">
 		<h1>Checkbox and radio button widgets</h1>
 
@@ -1069,7 +1082,7 @@ label {
 
 	<br>
 	<br>
-<h3>Default Accordion</h3>
+	<h3>Default Accordion</h3>
 	<div id="accordion">
 		<h3>Section 1</h3>
 		<div>
@@ -1110,7 +1123,7 @@ label {
 				per conubia nostra, per inceptos himenaeos.</p>
 		</div>
 	</div>
-	
+
 	<br>
 	<br>
 	<h3>Custom Accordion</h3>
@@ -1155,7 +1168,27 @@ label {
 		</div>
 	</div>
 
+
 	<br>
+	<br>
+	<h3>Advanced Accordion</h3>
+	<div id="accordion3" class="accordion">
+		<div class="header" id=hd1>Header 1 ( panel No. 0 )</div>
+		<div class="content" id=cd1>
+			<span id=s1></span> Text about Header 1
+		</div>
+		<div class="header" id=hd2>Header 2 ( panel No. 1 )</div>
+		<div class="content" id=cd2>Text about Header 2</div>
+		<div class="header" id=hd3>Header 3</div>
+		<div class="content" id=cd3>Text header 3</div>
+		<div class="header" id=hd4>Header 4</div>
+		<div class="content" id=cd4>Text about Header 4.</div>
+	</div>
+	<div id=d1></div>
+
+	<br>
+	<br>
+
 	<h3>JQuery Menus</h3>
 	<ul id="menu">
 		<li class="ui-state-disabled"><div>Toys (n/a)</div></li>
