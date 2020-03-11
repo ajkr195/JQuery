@@ -11,15 +11,19 @@
 
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="stylesheet" href="style.css">
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script>
 	$(function() {
 		$("#accordion").accordion();
-	});
+	}); 
 </script>
-
+<script>
+	$(function() {
+		$("#accordion2").accordion({collapsible:true, event:'click',animate:100,active:1,heightStyle:true,icons:{header:"ui-icon-plus",activeHeader:"ui-icon-minus"}});
+	}); 
+</script>
 <script>
 	$(function() {
 		var availableTags = [ "ActionScript", "AppleScript", "Asp", "BASIC",
@@ -433,6 +437,8 @@
   } );
   </script>
 
+
+
 <style>
 .ui-menu {
 	width: 150px;
@@ -695,10 +701,84 @@ label {
 	height: 200px;
 }
 </style>
-
+<style>
+    .box{
+        float:left;
+        overflow: hidden;
+        background: blue;
+    }
+    /* Add padding and border to inner content
+    for better animation effect */
+    .box-inner{
+        width: 200px;
+        padding: 10px;
+        border: 1px solid red;
+    }
+</style>
+<script>
+  $( function() {
+    $( "input" ).checkboxradio();
+  } );
+  </script>
+ <script>
+    $(document).ready(function(){
+        $(".slide-toggle").click(function(){
+            $(".box").animate({
+                width: "toggle"
+            });
+        });
+    });
+</script>
 </head>
 
 <body>
+
+<button type="button" class="slide-toggle">Slide Toggle</button>
+    <hr>
+    <div class="box">
+        <div class="box-inner">Lorem ipsum dolor sit amet...</div>
+    </div>
+<br><br>
+	<div class="widget">
+		<h1>Checkbox and radio button widgets</h1>
+
+		<h2>Radio Group</h2>
+		<fieldset>
+			<legend>Select a Location: </legend>
+			<label for="radio-1">New York</label> <input type="radio"
+				name="radio-1" id="radio-1"> <label for="radio-2">Paris</label>
+			<input type="radio" name="radio-1" id="radio-2"> <label
+				for="radio-3">London</label> <input type="radio" name="radio-1"
+				id="radio-3">
+		</fieldset>
+
+		<h2>Checkbox</h2>
+		<fieldset>
+			<legend>Hotel Ratings: </legend>
+			<label for="checkbox-1">2 Star</label> <input type="checkbox"
+				name="checkbox-1" id="checkbox-1"> <label for="checkbox-2">3
+				Star</label> <input type="checkbox" name="checkbox-2" id="checkbox-2">
+			<label for="checkbox-3">4 Star</label> <input type="checkbox"
+				name="checkbox-3" id="checkbox-3"> <label for="checkbox-4">5
+				Star</label> <input type="checkbox" name="checkbox-4" id="checkbox-4">
+		</fieldset>
+
+		<h2>Checkbox nested in label</h2>
+		<fieldset>
+			<legend>Bed Type: </legend>
+			<label for="checkbox-nested-1">2 Double <input
+				type="checkbox" name="checkbox-nested-1" id="checkbox-nested-1">
+			</label> <label for="checkbox-nested-2">2 Queen <input
+				type="checkbox" name="checkbox-nested-2" id="checkbox-nested-2">
+			</label> <label for="checkbox-nested-3">1 Queen <input
+				type="checkbox" name="checkbox-nested-3" id="checkbox-nested-3">
+			</label> <label for="checkbox-nested-4">1 King <input type="checkbox"
+				name="checkbox-nested-4" id="checkbox-nested-4">
+			</label>
+		</fieldset>
+	</div>
+
+
 	<br>
 	<br>
 
@@ -989,8 +1069,52 @@ label {
 
 	<br>
 	<br>
-
+<h3>Default Accordion</h3>
 	<div id="accordion">
+		<h3>Section 1</h3>
+		<div>
+			<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget,
+				quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida
+				in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam
+				mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a
+				velit eu ante scelerisque vulputate.</p>
+		</div>
+		<h3>Section 2</h3>
+		<div>
+			<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum
+				sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+				turpis porttitor velit, faucibus interdum tellus libero ac justo.
+				Vivamus non quam. In suscipit faucibus urna.</p>
+		</div>
+		<h3>Section 3</h3>
+		<div>
+			<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
+				Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in
+				pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac
+				felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam
+				nisi, eu iaculis leo purus venenatis dui.</p>
+			<ul>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+			</ul>
+		</div>
+		<h3>Section 4</h3>
+		<div>
+			<p>Cras dictum. Pellentesque habitant morbi tristique senectus et
+				netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum
+				primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+				Aenean lacinia mauris vel est.</p>
+			<p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim
+				consequat lectus. Class aptent taciti sociosqu ad litora torquent
+				per conubia nostra, per inceptos himenaeos.</p>
+		</div>
+	</div>
+	
+	<br>
+	<br>
+	<h3>Custom Accordion</h3>
+	<div id="accordion2">
 		<h3>Section 1</h3>
 		<div>
 			<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget,
@@ -1066,7 +1190,7 @@ label {
 	<br>
 
 	<div class="demo">
-	
+
 		<form action="#">
 			<fieldset>
 				<label for="speed">Select a speed</label> <select name="speed"
